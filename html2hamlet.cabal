@@ -21,7 +21,7 @@ executable html2hamlet
     build-depends: base >=4 && <5
                  , bytestring >=0.9
                  , containers
-                 , hamlet >=1.1
+                 , shakespeare
                  , html-conduit
                  , http-conduit >=1.9
                  , mtl
