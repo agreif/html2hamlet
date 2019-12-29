@@ -1,32 +1,41 @@
-name: html2hamlet
-version: 0.3.0
-cabal-version: >=1.6
-build-type: Simple
-license: BSD3
-license-file: LICENSE
-maintainer: tanaka.hideyuki@gmail.com
-homepage: http://github.com/tanakh/html2hamlet
-synopsis: HTML to Hamlet converter
-description:
-    HTML to Hamlet converter
-category: Text
-author: Hideyuki Tanaka
+cabal-version: 1.12
 
-source-repository head
-    type: git
-    location: https://tanakh@github.com/tanakh/html2hamlet.git
+-- This file has been generated from package.yaml by hpack version 0.32.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: efed13a4da0f3b6d0ce68501db801c9670355cf4dd0728c24df7a14e1a3a3095
+
+name:           html2hamlet
+version:        0.3.0
+synopsis:       HTML to Hamlet converter
+description:    HTML to Hamlet converter
+category:       Text
+homepage:       http://github.com/tanakh/html2hamlet
+author:         Hideyuki Tanaka
+maintainer:     tanaka.hideyuki@gmail.com
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    package.yaml
 
 executable html2hamlet
-    main-is: Html2Hamlet.hs
-    build-depends: base >=4 && <5
-                 , bytestring >=0.9
-                 , containers
-                 , shakespeare
-                 , html-conduit
-                 , http-conduit >=1.9
-                 , mtl
-                 , optparse-declarative >= 0.3
-                 , regex-tdfa
-                 , text >=0.11
-                 , wl-pprint-text >= 1.1
-                 , xml-conduit
+  main-is: Html2Hamlet.hs
+  other-modules:
+      Paths_html2hamlet
+  ghc-options: -Wall -rtsopts -threaded -with-rtsopts=-N
+  build-depends:
+      base
+    , bytestring
+    , containers
+    , html-conduit
+    , http-conduit
+    , mtl
+    , optparse-declarative
+    , regex-tdfa
+    , shakespeare
+    , text
+    , wl-pprint-text
+    , xml-conduit
+  default-language: Haskell2010

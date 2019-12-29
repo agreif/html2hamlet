@@ -1,0 +1,34 @@
+name: html2hamlet
+version: '0.3.0'
+synopsis: HTML to Hamlet converter
+maintainer: tanaka.hideyuki@gmail.com
+description: HTML to Hamlet converter
+category: Text
+author: Hideyuki Tanaka
+homepage: http://github.com/tanakh/html2hamlet
+
+extra-source-files:
+- package.yaml
+
+ghc-options: -Wall
+
+executables:
+  html2hamlet:
+    main: Html2Hamlet.hs
+    dependencies:
+    - base
+    - shakespeare
+    - optparse-declarative
+    - mtl
+    - bytestring
+    - text
+    - containers
+    - http-conduit
+    - xml-conduit
+    - html-conduit
+    - regex-tdfa
+    - wl-pprint-text
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
