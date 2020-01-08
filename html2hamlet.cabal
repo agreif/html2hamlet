@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: efed13a4da0f3b6d0ce68501db801c9670355cf4dd0728c24df7a14e1a3a3095
+-- hash: ad875d436ed626240e109b57346bf3e6182c208416be5c65030be509cea44c33
 
 name:           html2hamlet
 version:        0.3.0
@@ -20,16 +20,44 @@ build-type:     Simple
 extra-source-files:
     package.yaml
 
-executable html2hamlet
-  main-is: Html2Hamlet.hs
+library
+  exposed-modules:
+      Text.Hamlet.Html2Hamlet
   other-modules:
+      Main
       Paths_html2hamlet
-  ghc-options: -Wall -rtsopts -threaded -with-rtsopts=-N
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
   build-depends:
       base
     , bytestring
     , containers
     , html-conduit
+    , http-conduit
+    , mtl
+    , optparse-declarative
+    , regex-tdfa
+    , shakespeare
+    , text
+    , wl-pprint-text
+    , xml-conduit
+  default-language: Haskell2010
+
+executable html2hamlet
+  main-is: Main.hs
+  other-modules:
+      Text.Hamlet.Html2Hamlet
+      Paths_html2hamlet
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
+    , bytestring
+    , containers
+    , html-conduit
+    , html2hamlet
     , http-conduit
     , mtl
     , optparse-declarative
