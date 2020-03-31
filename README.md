@@ -16,10 +16,23 @@ Download the repository with:
 Go into the downloaded code directory:
 `cd html2hamlet`
 
+### The cabal way
+
 Build all the dependencies:
 `cabal new-build`
 
 Run the tool:
 `cabal new-run html2hamlet test.html`
+
+The file `test.hamlet` will be produced.
+
+### The stack way
+
+Build and install all the dependencies:
+`stack build html2hamlet`
+`stack install html2hamlet`
+
+Run the tool:
+`html2hamlet test.html`
 
 The file `test.hamlet` will be produced.
