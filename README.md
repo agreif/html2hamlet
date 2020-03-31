@@ -29,8 +29,10 @@ The file `test.hamlet` will be produced.
 ### The stack way
 
 Build and install all the dependencies:
-`stack build html2hamlet`
-`stack install html2hamlet`
+```
+    stack build html2hamlet
+    stack install html2hamlet
+```
 
 Run the tool:
 `html2hamlet test.html`
